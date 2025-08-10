@@ -1,0 +1,217 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("../image/a4.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #2c5e1a;
+}
+
+/* Header */
+header {
+    background: #1e4017; /* Dark Green */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    border-bottom: 5px solid #4a7729;
+}
+
+.logo {
+    width: 70px;
+    height: auto;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+}
+
+/* Navigation Bar */
+nav {
+    background: #2c5e1a; /* Slightly lighter dark green */
+    text-align: center;
+    padding: 10px;
+    border-bottom: 3px solid #a8c686;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+/* All Buttons & Navigation Links */
+button,
+.btn,
+nav ul li a {
+    background: #4a7729;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover,
+.btn:hover,
+nav ul li a:hover {
+    background: #2c5e1a;
+    color: #ffffff;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Owner & Contact Info */
+.owner,
+.contact-info {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    width: 45%;
+    height: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 2px solid #4a7729;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.owner h2,
+.contact-info h2 {
+    margin-bottom: 10px;
+    color: #2c5e1a;
+}
+
+.owner p,
+.contact-info p {
+    font-size: 16px;
+    color: #333;
+}
+
+.owner-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 10px auto;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    border: 3px solid #4a7729;
+}
+
+/* Contact Form */
+.contact-form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #4a7729;
+    text-align: center;
+}
+
+.contact-form h2 {
+    color: #2c5e1a;
+    margin-bottom: 15px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c5e1a;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #4a7729;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #f8f8f8;
+    transition: 0.3s;
+    color: #2c5e1a;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #a8c686;
+    background: #ffffff;
+    outline: none;
+}
+
+/* Map Section */
+.map {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    margin-top: 20px;
+    border-top: 3px solid #4a7729;
+    border-bottom: 3px solid #4a7729;
+    border-radius: 8px;
+}
+
+.map h2 {
+    color: #2c5e1a;
+}
+
+.map iframe {
+    width: 80%;
+    height: 300px;
+    border-radius: 8px;
+    border: 2px solid #4a7729;
+}
+
+/* Footer */
+footer {
+    background: #1e4017; /* Dark Green */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    border-top: 3px solid #4a7729;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .owner,
+    .contact-info {
+        width: 90%;
+        height: auto;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+}

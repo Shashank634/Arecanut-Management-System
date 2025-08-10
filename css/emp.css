@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('../image/img7.jpg') no-repeat center 10%;
+    background-size: cover; /* ensures the image covers the screen */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    overflow-x: hidden; /* prevents horizontal overflow */
+}
+
+/* Header Section */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 150, 0, 0.9);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-left p {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 2px 0 0;
+}
+
+/* Header Buttons */
+.header-right {
+    position: absolute;
+    left: 20%;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: white;
+    color: #009900;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+    justify-content: right;
+}
+
+.btn:hover {
+    background-color: #007700;
+    color: white;
+}
+
+/* Registration Box */
+.register-box {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 330px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    margin-top: 80px; /* Prevent overlap with header */
+}
+
+.logo {
+    width: 90px;
+    margin-bottom: 10px;
+}
+
+.register-box h2 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Input Fields */
+.input-icon {
+    position: relative;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.input-icon i {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 14px;
+}
+
+.input-icon input,
+.input-icon select {
+    width: calc(100% - 30px);
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.input-icon input:focus,
+.input-icon select:focus {
+    background-color: #fff;
+    border-color: #009900;
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #009900;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #007700;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    background: rgba(0, 150, 0, 0.9);
+    color: white;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+}
+
+@media screen and (max-width: 480px) {
+    .register-box {
+        width: 95%;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-right {
+        left: auto;
+        margin-top: 5px;
+    }
+}

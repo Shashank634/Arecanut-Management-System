@@ -1,0 +1,122 @@
+/* Background styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url("../image/adke.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container */
+.container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 25px 20px;
+  margin-left: 40px;
+  border-radius: 14px;
+  width: 500px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo {
+  width: 50px; /* Reduced size from 70px to 50px */
+  margin: 0 auto 15px auto;
+  display: block;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* Form Structure */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Rowed Fields */
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* Custom row for security question to stack vertically */
+.security-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* Single Field */
+.field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+label {
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Inputs & Selects */
+input,
+select {
+  padding: 9px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: 0.2s ease-in-out;
+}
+
+input:focus,
+select:focus {
+  border-color: #28a745;
+  outline: none;
+  box-shadow: 0 0 3px rgba(40, 167, 69, 0.4);
+}
+
+/* Button */
+button {
+  margin-top: 16px;
+  padding: 10px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Login link */
+a {
+  margin-top: 12px;
+  text-align: center;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
