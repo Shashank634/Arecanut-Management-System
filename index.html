@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepa Traders - Premium Arecanut</title>
+    <style>
+               /* === Root Variables === */
+               :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #2E7D32;
+            --accent-color: #8BC34A;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --dark-bg: #2E7D32;
+            --header-height: 80px;
+            --footer-height: 60px;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+        }
+
+        /* === Reset and Base Styles === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2E7D32; /* Dark Green */
+            color: white;
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        header:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .company-name {
+            font-size: 1.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+    }
+
+    nav a:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .admin-logo-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+    }
+
+    .admin-logo {
+        height: 40px;
+        width: auto;
+        transition: transform 0.3s ease;
+    }
+
+    .admin-icon-link:hover .admin-logo {
+        transform: scale(1.3);
+    }
+
+    .admin-icon-link:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        padding: 4px;
+    }
+
+        /* === Slideshow === */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center 30%;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            padding: 3rem;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slide-content:hover {
+            transform: translateY(-10px);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .datetime {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            display: inline-block;
+        }
+
+        /* === Main Content === */
+        main {
+            flex: 1;
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 1rem auto;
+        }
+
+        .about-section {
+            margin-bottom: 4rem;
+            text-align: justify;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 2px solid #f0f0f0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-image {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* === Footer === */
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            height: var(--footer-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            margin-top: auto;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        footer .copyright {
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 1.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .hero-title {
+                font-size: 2.3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                height: auto;
+                padding: 1.5rem;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="image/logo.png" alt="Deepa Traders Logo" class="logo">
+            <span class="company-name">Deepa Traders</span>
+            <h3><sub>Sirsi, Karnataka</sub></h3>
+            
+        </div>
+        <nav>
+            <ul>
+                <li><a href="login.html">Buy/Sell</a></li>
+                <li><a href="worker.html">Employee</a></li>
+                 <li><a href="user.php"><U>Users</U></a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li class="admin-logo-wrapper">
+                    <a href="login.html">Login</a>
+                    <a href="admin/admin_login.html" class="admin-icon-link">
+                        <img src="image/admin2.png" alt="Admin Panel" class="admin-logo">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <div class="slide active" style="background-image: url('image/img8.jpg');">
+            <div class="slide-content">
+                <h1 class="hero-title">Premium Arecanut Traders</h1>
+                <p class="hero-subtitle">Quality you can trust since 1995</p>
+                <div class="datetime" id="datetime"></div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('image/adke.jpg');">
+            <div class="slide-content">
+                <h1 class="hero-title">Red Arecanut Specialists</h1>
+                <p class="hero-subtitle">Finest quality with traditional processing</p>
+                <div class="datetime" id="datetime2"></div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('image/4.jpeg');">
+            <div class="slide-content">
+                <h1 class="hero-title">White Arecanut Experts</h1>
+                <p class="hero-subtitle">Sun-dried to perfection</p>
+                <div class="datetime" id="datetime3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section class="about-section">
+            <h2 class="section-title">Welcome Deepa Traders</h2>
+            <p>Deepa Traders is a family-owned business established in 1995, specializing in high-quality arecanut trading. With over 25 years of experience in the industry, we have built a reputation for reliability, quality, and fair pricing.</p>
+            <p>Our mission is to connect farmers with markets, ensuring fair prices for producers while delivering premium quality arecanut to our customers. We work directly with farmers across the region, providing guidance on cultivation practices and offering competitive prices for their produce.</p>
+            <p>At Deepa Traders, we believe in sustainable trading practices that benefit all stakeholders in the arecanut supply chain. Our team is committed to maintaining the highest standards of quality control and customer service.</p>
+        </section>
+
+        <section class="works-section">
+            <h2 class="section-title">Our Works</h2>
+            <div class="works-content" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <img src="image/areca_cut.jpg" alt="Arecanut Cutting" style="max-width: 300px; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <div style="flex: 1; min-width: 250px;">
+                    <h1>Arecanut Pealing Manual</h1>
+                    <p>At Deepa Traders, arecanut processing is a meticulous craft. We use traditional cutting methods that ensure each nut is handled with care to preserve its natural flavor and quality. Our skilled workers clean, cut, and sort arecanuts to maintain uniform size and appearance.</p>
+                    <p>By combining heritage techniques with modern hygiene practices, we ensure that the end product is premium-grade and safe for consumption. The cutting process is carried out in a dust-free environment with strict quality checks at every stage.</p>
+                </div>
+            </div><br>
+
+            <div class="works-content" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <img src="image/a7.jpg" alt="Arecanut Cutting" style="max-width: 300px; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                <div style="flex: 1; min-width: 250px;">
+                    <h1>Arecanut Pealing Machine</h1>
+                    <p>Areca peeling machine is developed specifically for the setting angle between the two cutter blades, which creates a shear force in the incision of dried areca nuts so that it can improve the quality of the peeling results.</p>
+                    <p>An areca peeler, also known as a dehusker or husking machine, is a device used to remove the outer husk from areca nuts, which are the seeds of the Areca catechu palm. This process is typically done manually with knives, but machines can be used to automate and expedite the process, especially for large-scale processing. Areca nut peeling machines come in various forms, including manual, pedal-operated, and motorized versions</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="products-section">
+            <h2 class="section-title">Our Arecanut Varieties</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="image/adke.jpg" alt="Red Arecanut" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Red Arecanut</h3>
+                        <p class="product-description">Premium quality red arecanut with high tannin content. Known for its rich color and superior taste. Ideal for traditional consumption and religious ceremonies.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="image/brown.jpeg" alt="White Arecanut" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">White Arecanut</h3>
+                        <p class="product-description">Carefully processed white arecanut with mild flavor. Popular in pan masala and chewing tobacco industries. Processed using traditional sun-drying methods.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="image/chali.jpeg" alt="Tender Arecanut" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Orange Arecanut</h3>
+                        <p class="product-description">Orange arecanut refers to the color and shape of the fruit that bears the areca nut, not a specific variety of areca nut itself. The areca nut, also known as betel nut, is found inside a hard, orange-colored fruit. </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="copyright">
+            &copy; <span id="year"></span> Deepa Traders. All Rights Reserved.
+        </div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            const dateString = now.toLocaleDateString('en-US', options);
+            document.getElementById('datetime').textContent = dateString;
+            document.getElementById('datetime2').textContent = dateString;
+            document.getElementById('datetime3').textContent = dateString;
+        }
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>

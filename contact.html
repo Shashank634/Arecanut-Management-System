@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | DEEPA TRADERS</title>
+    <link rel="stylesheet" href="css/contact.css">
+    <style>
+        /* Add this style to zoom out the offline map */
+        #offline-map {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transform: scale(0.7); /* This zooms out the image to 70% */
+            transform-origin: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="DEEPA TRADERS Logo" class="logo">
+        <h1>Contact DEEPA TRADERS</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <a href="about.html" class="btn">Go back</a>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="main-container"> 
+            <section class="owner">
+                <h2>Meet Our Owner</h2>
+                <img src="image/img1.jpg" alt="Rajaram Hegde" class="owner-img">
+                <p><strong>Rajaram Hegde</strong></p>
+                <p>Founder & Owner, Deepa Traders<br/> Phone : +91 98456 09122</p>
+            </section>
+
+            <section class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>We would love to hear from you! Reach out to us directly.</p>
+
+                <div class="contact-details">
+                    <p><strong>📍 Address:</strong> JR9J+6JJ, Devikere, Sirsi, Karnataka 581401<br>(Near L.H.Pai Orthopedics & Speciality Hospital)</p>
+                    <p><strong>📞 Phone:</strong> +91 98456 09122</p>
+                    <p><strong>📧 Email:</strong> info@deepatraders.com</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Form -->
+        <section class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="contact.php" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter Your Name" required style="width: 100%; max-width: 500px;">
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email" required style="width: 100%; max-width: 500px;">
+        
+                <label for="message">Your Question/Message:</label>
+                <textarea id="message" name="message" rows="3" placeholder="Enter Your Query/Message" required style="width: 100%; max-width: 400px;"></textarea>
+        
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        
+        
+
+        <!-- Map Section -->
+        <section class="map">
+            <h2>Our Location</h2>
+            <div id="online-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.666144929875!2d74.82894807510648!3d14.618084685870365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbea92bbdb4d373%3A0x5b255f1f806bcb!2sDeepa%20Traders!5e0!3m2!1sen!2sin!4v1743619161875!5m2!1sen!2sin" 
+                      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div id="offline-map-container" style="display:none;">
+                <h3>Offline Map Image</h3>
+                <img id="offline-map" src="image/map1.png" alt="Deepa Traders Location Map">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DEEPA TRADERS. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Online/Offline Map -->
+    <script>
+        function checkInternet() {
+            const onlineMap = document.getElementById('online-map');
+            const offlineMapContainer = document.getElementById('offline-map-container');
+            
+            if (navigator.onLine) {
+                onlineMap.style.display = 'block';
+                offlineMapContainer.style.display = 'none';
+            } else {
+                onlineMap.style.display = 'none';
+                offlineMapContainer.style.display = 'block';
+            }
+        }
+
+        // Check on page load
+        window.addEventListener('load', checkInternet);
+        
+        // Check when connection status changes
+        window.addEventListener('online', checkInternet);
+        window.addEventListener('offline', checkInternet);
+    </script>
+</body>
+</html>

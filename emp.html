@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Registration</title>
+  <link rel="stylesheet" href="css/emp.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-left">
+      <span>DEEPA TRADERS</span>
+      <p>Register here to become a worker</p>
+    </div>
+    <div class="header-right">
+      <a href="index.html" class="btn">Home</a>
+      <a href="worker.html" class="btn">Go Back</a>
+    </div>
+  </div>
+
+  <div class="register-box">
+    <img src="image/logo.png" class="logo" alt="Deepa Traders Logo">
+    <h2>Employee Registration</h2>
+
+    <form action="emp.php" method="POST" onsubmit="return validateForm()">
+      <div class="input-icon">
+        <i class="fas fa-user"></i>
+        <label>Full Name:</label>
+        <input type="text" name="name" id="name" placeholder="Enter Full Name" required>
+      </div>
+
+      <div class="input-icon">
+        <i class="fas fa-phone"></i>
+        <label>Phone Number:</label>
+        <input type="text" name="phone" id="phone" placeholder="Enter Phone Number"maxlength="10" required>
+      </div>
+
+      <div class="input-icon">
+        <i class="fas fa-id-card"></i>
+        <label>Aadhar Number:</label>
+        <input type="text" name="aadhar" id="aadhar" placeholder="Enter Aadhar Number" maxlength="12" required>
+      </div>
+
+      <div class="input-icon">
+        <i class="fas fa-venus-mars"></i>
+        <select name="gender" id="gender" required>
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <div class="input-icon">
+        <i class="fas fa-wallet"></i>
+        <select name="salary" id="salary" required>
+          <option value="">Select Salary</option>
+          <option value="5000">₹5000</option>
+          <option value="7000">₹7000</option>
+          <option value="10000">₹10,000</option>
+        </select>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    © 2025 DEEPA TRADERS. All Rights Reserved.
+  </div>
+
+  <!-- JavaScript validation -->
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const aadhar = document.getElementById('aadhar').value.trim();
+      const gender = document.getElementById('gender').value;
+      const salary = document.getElementById('salary').value;
+
+      const namePattern = /^[A-Za-z\s]+$/;
+      const phonePattern = /^\d{10}$/;
+      const aadharPattern = /^\d{12}$/;
+
+      if (!namePattern.test(name)) {
+        alert('Please enter a valid full name (letters and spaces only).');
+        return false;
+      }
+
+      if (!phonePattern.test(phone)) {
+        alert('Please enter a valid 10-digit phone number.');
+        return false;
+      }
+
+      if (!aadharPattern.test(aadhar)) {
+        alert('Please enter a valid 12-digit Aadhar number.');
+        return false;
+      }
+
+      if (gender === '') {
+        alert('Please select your gender.');
+        return false;
+      }
+
+      if (salary === '') {
+        alert('Please select a salary.');
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
+</body>
+</html>

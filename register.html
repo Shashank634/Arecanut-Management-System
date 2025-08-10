@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <link rel="stylesheet" href="css/register.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script>
+    function validateForm(event) {
+      event.preventDefault();
+
+      let form = document.forms["registerForm"];
+      let username = form["username"].value.trim();
+      let phone = form["phone"].value.trim();
+      let email = form["email"].value.trim();
+      let aadhar = form["aadhar"].value.trim();
+      let password = form["password"].value;
+      let confirmPassword = form["confirm_password"].value;
+      let answer1 = form["security_answer1"].value.trim();
+      let answer2 = form["security_answer2"].value.trim();
+
+      let usernameRegex = /^[a-zA-Z0-9]+$/;
+      let phoneRegex = /^[6-9]\d{9}$/;
+      let aadharRegex = /^\d{12}$/;
+      let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!usernameRegex.test(username)) {
+        alert("Username must contain only letters and numbers.");
+        return false;
+      }
+      if (!phoneRegex.test(phone)) {
+        alert("Phone number must start with 6-9 and be 10 digits.");
+        return false;
+      }
+      if (!emailRegex.test(email)) {
+        alert("Invalid email format.");
+        return false;
+      }
+      if (!aadharRegex.test(aadhar)) {
+        alert("Aadhar must be exactly 12 digits.");
+        return false;
+      }
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters.");
+        return false;
+      }
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+      }
+      if (answer1 === "" || answer2 === "") {
+        alert("Please answer both security questions.");
+        return false;
+      }
+
+      form.submit();
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <img src="image/logo.png" alt="Logo" class="logo">
+    <h2><i class="fa-solid fa-user-plus"></i> Register</h2>
+    <form id="registerForm" name="registerForm" action="register.php" method="post" onsubmit="return validateForm(event)">
+      <div class="row">
+        <div class="field">
+          <label><i class="fa-solid fa-user"></i> Username</label>
+          <input type="text" name="username"placeholder="Enter Your Username" required>
+        </div>
+        <div class="field">
+          <label><i class="fa-solid fa-phone"></i> Phone</label>
+          <input type="text" name="phone" maxlength="10" placeholder="Enter Your Username" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label><i class="fa-solid fa-envelope"></i> Email</label>
+          <input type="email" name="email"placeholder="Enter Your Email" required>
+        </div>
+        <div class="field">
+          <label><i class="fa-solid fa-id-card"></i> Aadhar Number</label>
+          <input type="text" name="aadhar" maxlength="12"placeholder="Enter Your Aadhar Number" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label><i class="fa-solid fa-lock"></i> Password</label>
+          <input type="password" name="password"placeholder="Enter Your Password" required>
+        </div>
+        <div class="field">
+          <label><i class="fa-solid fa-lock"></i> Confirm Password</label>
+          <input type="password" name="confirm_password"placeholder="Confirm Password" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label><i class="fa-solid fa-venus-mars"></i> Gender</label>
+          <select name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="field">
+          <label><i class="fa-solid fa-question"></i> Security Question 1</label>
+          <select name="security_question1" required>
+            <option value="What is your pet’s name?">What is your pet’s name?</option>
+            <option value="What is your mother’s maiden name?">What is your mother’s maiden name?</option>
+            <option value="What is your favorite food?">What is your favorite food?</option>
+          </select>
+          <input type="text" name="security_answer1" placeholder="Answer" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label><i class="fa-solid fa-question-circle"></i> Security Question 2</label>
+        <select name="security_question2" required>
+          <option value="What is your favorite book?">What is your favorite book?</option>
+          <option value="What is your dream job?">What is your dream job?</option>
+          <option value="What is your favorite color?">What is your favorite color?</option>
+        </select>
+        <input type="text" name="security_answer2" placeholder="Answer" required>
+      </div>
+
+      <button type="submit"><i class="fa-solid fa-paper-plane"></i> Register</button>
+      <a href="login.html"><i class="fa-solid fa-sign-in-alt"></i> Already have an account?</a>
+    </form>
+  </div>
+</body>
+</html>

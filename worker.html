@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Page - Deepa Traders</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('image/emp1.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #2f4f2f;
+    }
+
+    header {
+      background: rgba(34, 139, 34, 0.95);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    .header-title h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 3px #2f4f2f;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .register-btn {
+      background-color: #ffffff;
+      color: #228b22;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .register-btn:hover {
+      background-color: #2e8b57;
+      color: white;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+      box-shadow: 0 0 20px rgba(0, 100, 0, 0.2);
+    }
+
+    .container section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: #228b22;
+      margin-bottom: 1rem;
+    }
+
+    p, ul {
+      color: #2f4f2f;
+      line-height: 1.7;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+    }
+
+    /* Worker Info Styles */
+    .worker-info {
+      margin-top: 3rem;
+    }
+
+    .worker-info h2 {
+      text-align: center;
+      color: #228b22;
+      margin-bottom: 2rem;
+    }
+
+    .worker-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .worker-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 100, 0, 0.2);
+      text-align: center;
+      padding: 1rem;
+      width: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .worker-card img {
+      width: 90%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      transform: scale(0.95) translateY(5px);
+    }
+
+    .worker-card h3 {
+      margin: 0.5rem 0;
+      color: #2f4f2f;
+    }
+
+    .worker-card p {
+      margin: 0.3rem 0;
+    }
+
+    footer {
+      background: rgba(34, 139, 34, 0.9);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .header-title {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-buttons {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .worker-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-title">
+      <img src="image/logo.png" alt="Deepa Traders Logo">
+      <h1><i class="fas fa-leaf"></i> Deepa Traders - Employee Portal</h1>
+    </div>
+    <div class="header-buttons">
+      <a href="emp.html" class="register-btn"><i class="fas fa-user-plus"></i> Register Here</a>
+      <a href="index.html" class="register-btn"><i class="fas fa-arrow-left"></i> Go Back</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Worker Info Section First -->
+    <section class="worker-info">
+      <h2>Our Dedicated Workers</h2>
+      <div class="worker-grid">
+        <div class="worker-card">
+          <img src="image/satish.jpg" alt="Worker 1">
+          <h3>Satish</h3>
+          <p>Age: 43</p>
+          <p>Gender: Male</p>
+        </div>
+        <div class="worker-card">
+          <img src="image/yamuna.jpg" alt="Worker 2">
+          <h3>Yamuna</h3>
+          <p>Age: 48</p>
+          <p>Gender: Female</p>
+        </div>
+        <div class="worker-card">
+          <img src="image/employee2.jpg" alt="Worker 3">
+          <h3>Chandra</h3>
+          <p>Age: 42</p>
+          <p>Gender: Male</p>
+        </div>
+        <div class="worker-card">
+          <img src="image/savita.jpg" alt="Worker 4">
+          <h3>Savita </h3>
+          <p>Age: 38</p>
+          <p>Gender: Female</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Importance and Work of Employees -->
+    <section class="importance">
+      <h2>Importance and Work of Employees</h2>
+      <p>
+        Employees are the backbone of Deepa Traders. Their dedication drives success across every aspect of our agricultural trade. From supporting local farmers to ensuring top-quality delivery, our employees make a vital impact.
+      </p>
+      <ul>
+        <li>Monitoring and managing agricultural goods and supplies</li>
+        <li>Assisting customers with product selection and support</li>
+        <li>Maintaining inventory and tracking logistics</li>
+        <li>Supporting sustainable farming initiatives</li>
+        <li>Ensuring operational efficiency and customer satisfaction</li>
+      </ul>
+    </section>
+
+    <!-- About Arecanut Section -->
+    <section class="arecanut">
+      <h2>About Arecanut</h2>
+      <p>
+        Arecanut, also known as betel nut, is a key commercial crop in India. Grown primarily in southern states like Karnataka, it plays a major role in supporting rural economies.
+      </p>
+      <p>
+        At Deepa Traders, we are committed to empowering arecanut farmers through high-quality inputs, transparent pricing, and expert guidance. Arecanut is commonly used in religious rituals, Ayurvedic medicine, and as a chewable stimulant with betel leaves.
+      </p>
+      <p>
+        Our team works closely with growers to ensure healthy crops, sustainable practices, and a strong supply chain that supports both tradition and innovation in agriculture.
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Deepa Traders | All rights reserved</p>
+  </footer>
+
+</body>
+</html>

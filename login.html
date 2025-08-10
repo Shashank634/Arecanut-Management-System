@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="css/login.css" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script>
+    function validateLogin(event) {
+      event.preventDefault(); // Prevent form submission until validation
+
+      let email = document.forms["loginForm"]["email"].value.trim();
+      let password = document.forms["loginForm"]["password"].value;
+
+      // Email validation regex
+      let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+      if (password === "") {
+        alert("Password cannot be empty.");
+        return false;
+      }
+
+      document.getElementById("loginForm").submit(); // Submit the form if validation passes
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <img src="image/logo.png" alt="Company Logo" class="logo" />
+
+    <h2><i class="fa-solid fa-right-to-bracket"></i> Login</h2>
+    <form id="loginForm" name="loginForm" action="login.php" method="post" onsubmit="return validateLogin(event)">
+      
+      <!-- Email Field -->
+      <label><i class="fa-solid fa-envelope"></i> Email</label>
+      <input type="email" name="email" placeholder="Enter your Email" required />
+      
+      <!-- Password Field -->
+      <label><i class="fa-solid fa-lock"></i> Password</label>
+      <input type="password" name="password" placeholder="Enter your Password" required />
+
+      <!-- Submit Button -->
+      <button type="submit"><i class="fa-solid fa-sign-in-alt"></i> Login</button>
+
+      <!-- Links -->
+      <a href="forgot_password.html"><i class="fa-solid fa-key"></i> Forgot Password?</a>
+      <a href="register.html"><i class="fa-solid fa-user-plus"></i> Create a new account</a>
+    </form>
+  </div>
+</body>
+</html>
